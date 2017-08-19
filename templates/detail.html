@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block title %} MyJournal {% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="entry-list single">
+            <article>
+                <h1>{{ entry.title }}</h1>
+                <time datetime="2016-01-31">{{ entry.date }}</time>
+                <div class="entry">
+                    <h3>Time Spent: </h3>
+                    <p>{{ entry.time }}</p>
+                </div>
+                <div class="entry">
+                    <h3>What I Learned:</h3>
+                    <p>{{ entry.learned }}</p>
+                </div>
+                <div class="entry">
+                    <h3>Resources to Remember:</h3>
+                    <p>{{ entry.resources }}</p>
+                </div>
+            </article>
+        </div>
+    </div>
+    <div class="edit">
+        <p><a href="/entries/edit/{{ entry.id }}">Edit Entry</a></p>
+        <p><a href="/entries/delete/{{ entry.id }}">Delete Entry</a></p>
+    </div>
+{% endblock %}
